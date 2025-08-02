@@ -6,7 +6,7 @@
     - name: update repository index
       ansible.builtin.apt:
         update_cache: yes     
-    
+      when: ansible_distribution == "Ubuntu"      
     
     
     
@@ -15,10 +15,12 @@
       ansible.builtin.apt:
         name: apache2
         state: latest  
-     
+      when: ansible_distribution == "Ubuntu"
+    
     - name: install support for php
       ansible.builtin.apt: 
         name: libapache2-mod-php
-        state: latest          
+        state: latest
+      when: ansible_distribution == "Ubuntu"             
 
 
