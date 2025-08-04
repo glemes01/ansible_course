@@ -11,16 +11,16 @@
     ansible.builtin.apt:
       update_cache: yes
     when: ansible_distribution == "Ubuntu"    
-    gater_facts: false
+    
 
   - name: install apache2 package
     ansible.builtin.apt:
       name: apache2
     when: ansible_distribution == "Ubuntu"    
-    gather:facts: false
+    
 
   - name: install support for php
     ansible.builtin.apt:
       name: libapache2-mod-php
     when: ansible_distribution == "Ubuntu"
-    gather_facts: false    
+        
